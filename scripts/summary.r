@@ -16,6 +16,7 @@ names(data)[names(data)=="How.many.countries.have.you.visited.in.your.life."] <-
 names(data)[names(data)=="Do.you.consider.yourself."] <- "dog_or_cat_person"
 names(data)[names(data)=="Are.you.a.Seahawks.fan."] <- "go_hawks"
 
+# Information about the data
 summary <- function(dataset) {
   output <- list()
   output$participants <- nrow(dataset)
@@ -31,6 +32,8 @@ summary <- function(dataset) {
                           filter(familiarity_git_for_vc == "Never used it") %>% 
                           filter(familiarity_md == "Never used it") %>% 
                           filter(familiarity_r == "Never used it")) / output$participants
-  #output$ave_countries_visited <-
+  output$ave_countries_visited <- mean(dataset$countries_visited)
+  hawks_fans <- grepl("yes", dataset$go_hawks, ignore.case = TRUE)
+  output$hawks_fans <- sum(hawks_fans == TRUE)
   return (output)
 }
