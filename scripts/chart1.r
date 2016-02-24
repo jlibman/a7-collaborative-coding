@@ -12,9 +12,10 @@ chart_one <- function(data) {
   xaxis <- list(title = 'Type of Person')
   yaxis <- list(title = 'Number of People')
   
-  # Create a bar graph 
+  # Create and return a bar graph 
   plot_ly(summary_tab, type = 'bar', x = names(summary_tab), 
           y = as.numeric(summary_tab[1,])) %>% 
-    layout(title = 'What type of person is our class?', xaxis=xaxis, yaxis=yaxis)
+    layout(title = 'What type of person is our class?', xaxis=xaxis, yaxis=yaxis) %>% 
+    return()
   
 }
