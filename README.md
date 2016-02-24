@@ -14,4 +14,4 @@
 
 4. Did you encounter any problems in this challenge we should warn students about in the future? How can we make the challenge better?
 
-    Just version control problems
+    Just version control problems 

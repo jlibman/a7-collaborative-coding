@@ -8,7 +8,7 @@ chart_one <- function(dataset) {
               "Both!" = sum(data$dog_or_cat_person == "Both!"), 
               "Neither" = sum(data$dog_or_cat_person == "Neither"))
   
-  # Set up axis names
+  # Set up axis names 
   xaxis <- list(title = 'Type of Person')
   yaxis <- list(title = 'Number of People')
   
