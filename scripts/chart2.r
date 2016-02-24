@@ -10,10 +10,11 @@ chart_two <- function(dataset) {
               "Number of Windows Users interested in Info" = 
                 sum((operating_system == "Windows") & (info_interest == "Yes"))
     )
-              
+  
   # Set up axis names and fonts
   xaxis <- list(title = 'Type of Person', tickangle = 8, tickfont = list(size = 9))
-  yaxis <- list(title = 'Number of People')
+  chart_two_title <- paste0("Number of People (out of ", nrow(dataset), " Participants)")
+  yaxis <- list(title = chart_two_title)
   
   # Create a bar graph 
   plot_ly(summary_tab, type = 'bar', x = names(summary_tab), 

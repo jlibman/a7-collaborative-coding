@@ -26,13 +26,13 @@ source('scripts/summary.r')
 source('scripts/chart1.r')
 source('scripts/chart2.r')
 
-# fdsafds
+# Assign list collected from summary
 summary_data <- as.data.frame(summary(data))
 
 ```
 
 ## Summary
-The class breakdown from the survey was `r summary_data$freshmen` Freshmen, `r summary_data$sophomore` Sophomores, `r summary_data$junior` Juniors, and `r summary_data$senior` Seniors. `r summary_data$info_interest` of `r summary_data$participants` participants indicated that they are interested in applying for informatics. `r summary_data$windows` responded that they use Windows operating systems, while `r summary_data$mac` responded that they use MAC OS. The average number of countries respondents have visited is `r round(summary_data$ave_countries_visited,3)`. `r summary_data$hawks_fans` of us are Seahawks fans.
+The class breakdown from the survey was `r summary_data$freshmen` Freshmen, `r summary_data$sophomore` Sophomores, `r summary_data$junior` Juniors, and `r summary_data$senior` Seniors. `r summary_data$info_interest` of `r summary_data$participants` participants indicated that they are interested in applying for the Informatics major. `r summary_data$windows` responded that they use Windows operating systems, while `r summary_data$mac` responded that they use a Mac OS. The average number of countries respondents have visited is `r round(summary_data$ave_countries_visited,3)`. `r summary_data$hawks_fans` of us are Seahawks fans.
 
 ## Chart One
 ```{r , echo=FALSE}
