@@ -17,5 +17,4 @@ chart_one <- function(dataset) {
           y = as.numeric(summary_tab[1,])) %>% 
     layout(title = 'What type of people are in our class?', xaxis=xaxis, yaxis=yaxis) %>% 
     return()
-  
 }
