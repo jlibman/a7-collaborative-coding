@@ -1,12 +1,12 @@
 # A function that takes a dataset as a parameter and returns a visualization chart
-chart_one <- function(data) {
+chart_one <- function(dataset) {
   
   # Creating a summary table of the totals for the different types of people
   summary_tab <- data %>% 
-    summarise("A Dog Person" = sum(data$Do.you.consider.yourself. == "A dog person..."), 
-              "A Cat Person" = sum(data$Do.you.consider.yourself. == "A cat person...."),
-              "Both!" = sum(data$Do.you.consider.yourself. == "Both!"), 
-              "Neither" = sum(data$Do.you.consider.yourself. == "Neither"))
+    summarise("A Dog Person" = sum(data$dog_or_cat_person == "A dog person..."), 
+              "A Cat Person" = sum(data$dog_or_cat_person == "A cat person...."),
+              "Both!" = sum(data$dog_or_cat_person == "Both!"), 
+              "Neither" = sum(data$dog_or_cat_person == "Neither"))
   
   # Set up axis names
   xaxis <- list(title = 'Type of Person')
@@ -15,7 +15,7 @@ chart_one <- function(data) {
   # Create and return a bar graph 
   plot_ly(summary_tab, type = 'bar', x = names(summary_tab), 
           y = as.numeric(summary_tab[1,])) %>% 
-    layout(title = 'What type of person is our class?', xaxis=xaxis, yaxis=yaxis) %>% 
+    layout(title = 'What type of persons are in our class?', xaxis=xaxis, yaxis=yaxis) %>% 
     return()
   
 }
